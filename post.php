@@ -15,8 +15,8 @@
 
     <main id="post-container">
         <div class="content-container">
-            <h1 main="main-title"><?= $currentPost['title'] ?></h1>
-            <p id="post-descrition"><?= $currentPost['description'] ?></p>
+            <h1 id="main-title"><?= $currentPost['title'] ?></h1>
+            <p id="post-description"><?= $currentPost['description'] ?></p>
             <div class="img-container">
                 <img src="<?= $BASE_URL ?>/img/<?= $currentPost['img'] ?>" alt="<?= $currentPost['title'] ?>">
             </div>
@@ -35,21 +35,21 @@
                 Est repellat quibusdam maiores doloremque nesciunt possimus facilis hic pariatur eveniet? Doloremque fugit molestiae tempore vel a vitae cum labore laboriosam nihil dolor. Aliquam, laboriosam hic explicabo odit consequatur nam?
             </p>
         </div>
+        <aside id="nav-container">
+            <h3 id="tags-title">Tags</h3>
+            <ul id="tags-list">
+                <?php foreach($currentPost['tags'] as $tag): ?>
+                    <li><a href="#"><?= $tag ?></a></li>
+                <?php endforeach ?>
+            </ul>
+            <h3 id="categories-title">Categorias</h3>
+            <ul id="categories-list">
+                <?php foreach($categories as $category): ?>
+                    <li><a href="#"><?= $category ?></a></li>
+                <?php endforeach ?>
+            </ul>
+        </aside>
     </main>
-    <aside id="nav-container">
-        <h3 id="tags-title">Tags</h3>
-        <ul id="tag-list">
-            <?php foreach($currentPost['tags'] as $tag): ?>
-                <li><a href="#"><?= $tag ?></a></li>
-            <?php endforeach ?>
-        </ul>
-        <h3 id="categories-title">Categorias</h3>
-        <ul id="categories-list">
-            <?php foreach($categories as $category): ?>
-                <li><a href="#"><?= $category ?></a></li>
-            <?php endforeach ?>
-        </ul>
-    </aside>
 
 <?php
     include_once('templates/footer.php');
